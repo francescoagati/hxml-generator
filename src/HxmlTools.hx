@@ -50,4 +50,9 @@ class HxmlTools {
     return {name:name,libs:[],flags:[]};
   }
 
+  public inline static function write_index_hxml(hxmls:Array<Hxml>,path:String) {
+    var content = [for (hxml in hxmls) (hxml:String)].join("--next\n");
+    sys.io.File.saveContent(path,content);
+  }
+
 }

@@ -1,6 +1,9 @@
 -main Main
 -js builds/js/other.js
 -dce full
+null
+null
 -D analyzer target=mobile device=other
 -lib thx.core tink_macro
+null
 

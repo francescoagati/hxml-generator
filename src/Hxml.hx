@@ -107,12 +107,11 @@ abstract Hxml(Project) from Project to Project {
   public inline function clone():Hxml
     return new Hxml(untyped haxe.Json.parse(haxe.Json.stringify(this)));
 
-  public inline function writeFile(path:String) {
+  @:to public inline function toString():String  {
 
     inline function cleanup(s:String){
       return [for (row in s.split("\n")) if (row.indexOf('null') == -1) row ].join("\n");
     }
-
 
     var render:HxmlRender = this;
     var file = '${render.write_main()}
@@ -126,9 +125,13 @@ ${render.write_no_traces()}
 
 ';
 
-    sys.io.File.saveContent(path,cleanup(file));
+    return cleanup(file);
 
+  }
 
+  public inline function writeFile(path:String) {
+    var file:String = new Hxml(this);
+    sys.io.File.saveContent(path,file);
   }
 
 }

@@ -1,0 +1,41 @@
+-main Main
+-js builds/js/ios.js
+-dce full
+-D analyzer target=mobile device=ios
+-lib thx.core tink_macro
+
+--next
+-main Main
+-js builds/js/ipad.js
+-dce full
+-D analyzer target=mobile device=ipad
+-lib thx.core tink_macro
+
+--next
+-main Main
+-js builds/js/android_chrome.js
+-dce full
+-D analyzer target=mobile device=android_chrome
+-lib thx.core tink_macro
+
+--next
+-main Main
+-js builds/js/android_webkit.js
+-dce full
+-D analyzer target=mobile device=android_webkit
+-lib thx.core tink_macro
+
+--next
+-main Main
+-js builds/js/wp.js
+-dce full
+-D analyzer target=mobile device=wp
+-lib thx.core tink_macro
+
+--next
+-main Main
+-js builds/js/other.js
+-dce full
+-D analyzer target=mobile device=other
+-lib thx.core tink_macro
+

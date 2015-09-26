@@ -26,19 +26,21 @@ class Main {
     var hxml_mobiles = [for (device in devices) {
       var hxml = mobile.clone();
       hxml
-        .set_name('device')
+        .set_name(device)
         .set_target(js('$js_path/$device.js'))
         .add_flag(value('device',device));
 
       hxml;
     }];
 
-    for (hxml in hxml_mobiles) hxml.writeFile('tmp/projects-hxml/${hxml.name}.hxml');
+    for (hxml in hxml_mobiles) hxml.writeFile('$hxml_path/${hxml.name}.hxml');
+
+    hxml_mobiles.write_index_hxml('$hxml_path/mobile.hxml');
 
     desktop
       .add_flag(value('target','desktop'))
       .set_target(js('$js_path/desktop.js'))
-      .writeFile('tmp/projects-hxml/desktop.hxml');
+      .writeFile('$hxml_path/desktop.hxml');
 
   }
 }
