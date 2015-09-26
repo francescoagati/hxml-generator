@@ -1,0 +1,6 @@
+-neko bin/hxml-gen.n
+-main Main
+-cp src
+-lib thx.core
+-D analyzer
+-dce full

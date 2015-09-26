@@ -1,0 +1,6 @@
+-main Main
+-js builds/js/desktop.js
+-dce full
+-D analyzer target=desktop
+-lib thx.core tink_macro
+
