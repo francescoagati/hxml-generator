@@ -1,0 +1,12 @@
+{
+  "name": "hxml-generator",
+  "license": "MIT",
+  "classPath": "src",
+  "tags": ["hxml"],
+  "description": "hxml-generator",
+  "contributors": ["francescoagati"],
+  "releasenote": "first release",
+  "version": "0.0.1",
+  "url": "https://github.com/francescoagati/riot.hx",
+  "dependencies": {}
+}
