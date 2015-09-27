@@ -1,5 +1,6 @@
-import Hxml;
-using HxmlTools;
+package hxml_generator;
+import hxml_generator.Hxml;
+using hxml_generator.HxmlTools;
 class Main {
 
   static var js_path = 'builds/js';

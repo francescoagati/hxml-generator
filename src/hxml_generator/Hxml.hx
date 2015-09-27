@@ -1,3 +1,5 @@
+package hxml_generator;
+
 using StringTools;
 
 enum Target {

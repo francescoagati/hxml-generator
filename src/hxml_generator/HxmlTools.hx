@@ -1,6 +1,7 @@
+package hxml_generator;
 import haxe.macro.Expr;
-import Hxml;
-using HxmlTools;
+import hxml_generator.Hxml;
+using hxml_generator.HxmlTools;
 
 class HxmlTools {
 

@@ -1,5 +1,5 @@
 -neko bin/hxml-gen.n
--main Main
+-main hxml_generator.Main
 -cp src
 -lib thx.core
 -D analyzer
