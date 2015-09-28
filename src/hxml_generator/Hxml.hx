@@ -77,8 +77,17 @@ abstract HxmlRender(Hxml) from Hxml to Hxml {
     if (this.no_traces != null && this.no_traces == true) '-no-traces' else null;
 
 
-  public inline function write_flags()
-    return if (this.flags != null && this.flags.length > 0) '-D ${(this.flags:String)}' else null;
+  public inline function write_flags() {
+    return if (this.flags != null && this.flags.length > 0) {
+
+      [for (flag in this.flags) {
+        '-D $flag';
+      }].join("\n");
+    } else null;
+  }
+
+
+
   public inline function write_libs()
     return if (this.libs != null && this.libs.length > 0) '-lib ${(this.libs:String)}' else null;
 

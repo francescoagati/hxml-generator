@@ -1,6 +1,8 @@
 -main Main
 -js builds/js/android_chrome.js
 -dce full
--D analyzer target=mobile device=android_chrome
+-D analyzer
+-D target=mobile
+-D device=android_chrome
 -lib thx.core tink_macro
 

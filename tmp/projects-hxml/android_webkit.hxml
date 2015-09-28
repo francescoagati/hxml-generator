@@ -1,6 +1,8 @@
 -main Main
 -js builds/js/android_webkit.js
 -dce full
--D analyzer target=mobile device=android_webkit
+-D analyzer
+-D target=mobile
+-D device=android_webkit
 -lib thx.core tink_macro
 

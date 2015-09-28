@@ -1,6 +1,8 @@
 -main Main
 -js builds/js/wp.js
 -dce full
--D analyzer target=mobile device=wp
+-D analyzer
+-D target=mobile
+-D device=wp
 -lib thx.core tink_macro
 

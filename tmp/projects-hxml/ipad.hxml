@@ -1,6 +1,8 @@
 -main Main
 -js builds/js/ipad.js
 -dce full
--D analyzer target=mobile device=ipad
+-D analyzer
+-D target=mobile
+-D device=ipad
 -lib thx.core tink_macro
 

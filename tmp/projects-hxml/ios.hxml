@@ -1,6 +1,8 @@
 -main Main
 -js builds/js/ios.js
 -dce full
--D analyzer target=mobile device=ios
+-D analyzer
+-D target=mobile
+-D device=ios
 -lib thx.core tink_macro
 
