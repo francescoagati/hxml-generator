@@ -25,7 +25,7 @@ typedef Project = {
   ?main:String,
   name:String,
   ?target:Target,
-  ?cp:String,
+  ?cp:Array<String>,
   ?cmd:String,
   ?dce:String,
   ?no_traces:Bool
@@ -68,13 +68,16 @@ abstract Container(Array<String>) from Array<String> to Array<String> {
 abstract HxmlRender(Hxml) from Hxml to Hxml {
   public inline function new(hxml) this = hxml;
 
-  public inline function write_main() return if (this.main != null) '-main ${this.main}' else null;
-  public inline function write_cp() return if (this.cp != null) '-cp ${this.cp}' else null;
-  public inline function write_dce() return if (this.dce != null) '-dce ${this.dce}' else null;
-  public inline function write_cmd() return if (this.cmd != null) '-cmd ${this.cmd}' else null;
+  public inline function write_main() return if (this.main != null) '-main ${this.main}' else '';
+  public inline function write_cp() {
+    trace(this.cp);
+    return if (this.cp != null && this.cp.length > 0) [for (path in this.cp) '-cp ${path}' ].join("\n") else '';
+  }
+  public inline function write_dce() return if (this.dce != null) '-dce ${this.dce}' else '';
+  public inline function write_cmd() return if (this.cmd != null) '-cmd ${this.cmd}' else '';
 
   public inline function write_no_traces() return
-    if (this.no_traces != null && this.no_traces == true) '-no-traces' else null;
+    if (this.no_traces != null && this.no_traces == true) '-no-traces' else '';
 
 
   public inline function write_flags() {
@@ -83,7 +86,7 @@ abstract HxmlRender(Hxml) from Hxml to Hxml {
       [for (flag in this.flags) {
         '-D $flag';
       }].join("\n");
-    } else null;
+    } else '';
   }
 
 
