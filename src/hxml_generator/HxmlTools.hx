@@ -23,7 +23,8 @@ class HxmlTools {
   }
 
   public inline static function set_cp(hxml:Hxml,cp:String) {
-    hxml.cp = cp;
+    if (hxml.cp == null) hxml.cp = [];
+    hxml.cp.push(cp);
     return hxml;
   }
 
