@@ -15,6 +15,9 @@ class Main {
       .set_dce('full')
       .set_main('Main')
       .add_flag(value('analyzer'))
+      .set_cp('/path1')
+      .set_cp('/path2')
+      .set_cp('/path3')
       .add_libs(['thx.core', 'tink_macro']);
 
     var mobile = hxml.clone();
@@ -28,6 +31,7 @@ class Main {
       var hxml = mobile.clone();
       hxml
         .set_name(device)
+        .set_cp('/path4')
         .set_target(js('$js_path/$device.js'))
         .add_flag(value('device',device));
 
